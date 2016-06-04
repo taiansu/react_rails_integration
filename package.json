@@ -1,0 +1,8 @@
+{
+  "name": "react_rails_integration",
+  "version": "1.0.0",
+  "description": "== README",
+  "scripts": {
+    "postinstall": "cd ./frontend && npm install"
+  }
+}

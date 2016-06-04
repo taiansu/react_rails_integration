@@ -1,0 +1,59 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "description": "A React/Flux app generate by RF, powered with Babel",
+  "main": "build/bundle.js",
+  "dependencies": {
+    "flux": "*",
+    "jquery": "^2.2.4",
+    "object-assign": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "babel-loader": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-jest": "*",
+    "node-sass": "*",
+    "sass-loader": "*",
+    "imports-loader": "*",
+    "jquery": "*",
+    "less-loader": "*",
+    "less": "*",
+    "exports-loader": "*",
+    "extract-text-webpack-plugin": "*",
+    "css-loader": "*",
+    "file-loader": "*",
+    "jest-cli": "*",
+    "style-loader": "*",
+    "url-loader": "*",
+    "webpack-dev-server": "*",
+    "webpack": "*"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.prod.config.js"
+  },
+  "author": "",
+  "license": "",
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "testFileExtensions": [
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "globals": {
+      "SCRIPTS": "<rootDir>/src/scripts"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/node_modules/"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  }
+}

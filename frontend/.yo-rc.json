@@ -1,0 +1,50 @@
+{
+  "generator-rf": {
+    "appname": "frontend",
+    "mkTestDirs": true,
+    "withBootstrap": true,
+    "description": "A React/Flux app generate by RF, powered with Babel",
+    "dialect": "Babel",
+    "scriptSuffix": ".js",
+    "testFileExtensions": [
+      "js"
+    ],
+    "dialectModuleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "stylesheet": "SASS",
+    "stylesheetSuffix": ".sass",
+    "bootstrapLoaders": "{\n        test: /bootstrap\\/js\\//,\n        loader: 'imports?jQuery=jquery'\n      },\n\n      {\n        test: /\\.(ttf|eot|svg)$/,\n        loader: 'file-loader'\n      },\n\n      {\n        test: /\\.woff2?$/,\n        loader: 'url-loader?limit=10000&minetype=application/font-woff'\n      },\n",
+    "devDependencies": {
+      "babel-loader": "*",
+      "babel-preset-es2015": "*",
+      "babel-preset-react": "*",
+      "babel-jest": "*",
+      "node-sass": "*",
+      "sass-loader": "*",
+      "bootstrap": "*",
+      "bootstrap-webpack": "*",
+      "imports-loader": "*",
+      "jquery": "*",
+      "less-loader": "*",
+      "less": "*",
+      "exports-loader": "*",
+      "extract-text-webpack-plugin": "*",
+      "css-loader": "*",
+      "file-loader": "*",
+      "jest-cli": "*",
+      "react-hot-loader": "*",
+      "react": "*",
+      "react-dom": "*",
+      "style-loader": "*",
+      "url-loader": "*",
+      "webpack-dev-server": "*",
+      "webpack": "*"
+    },
+    "dialectTest": ".jsx?",
+    "dialectLoader": "babel?presets[]=es2015,presets[]=react",
+    "dialectDevLoader": "react-hot!babel?presets[]=es2015,presets[]=react",
+    "stylesheetLoader": "style!css!sass?indentedSyntax=true&outputStyle=expanded"
+  }
+}
