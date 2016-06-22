@@ -23,12 +23,13 @@ module.exports = {
   ],
   resolve: {
     modulesDirectories: ['node_modules'],
+    extensions: ["", ".js", ".jsx"]
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: "react-hot!babel?presets[]=es2015,presets[]=react",
+        loader: "babel?presets[]=es2015,presets[]=react",
         exclude: [ path.resolve(__dirname, "node_modules") ]
       },
 
