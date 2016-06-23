@@ -34,8 +34,8 @@ module.exports = {
       },
 
       {
-        test: /\.sass$/,
-        loader: "style!css!sass?indentedSyntax=true&outputStyle=expanded"
+        test: /\.scss$/,
+        loader: "style!css!sass?outputStyle=expanded"
       },
 
       {

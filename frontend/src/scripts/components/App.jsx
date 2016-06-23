@@ -30,6 +30,9 @@ const App = React.createClass({
           allTodos={this.state.allTodos}
           areAllComplete={this.state.areAllComplete}
         />
+        <div id="globalLoading" className={this.state.isLoading ? 'loading' : ''}>
+          <div className="spinner spinner--double"></div>
+        </div>
       </div>
     )
   },

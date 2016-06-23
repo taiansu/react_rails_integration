@@ -1,4 +1,4 @@
-require('../assets/stylesheets/style.sass');
+require('../assets/stylesheets/style.scss');
 
 import App from './components/App';
 import React from 'react'
