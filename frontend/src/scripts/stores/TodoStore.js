@@ -9,6 +9,8 @@ var _todos = {
   "todo1": {id: "todo1", text: 'My todo'},
 };
 
+var _isLoading = false
+
 
 // 操作資料本體的函式
 function create (text){
@@ -37,6 +39,9 @@ var TodoStore = Object.assign({}, EventEmitter.prototype, {
       }
     }
     return true;
+  },
+  isLoading(){
+    return _isLoading
   },
   emitChange() {
     this.emit(CHANGE_EVENT);
@@ -67,6 +72,11 @@ AppDispatcher.register(function(action){
         update(action.id, {text: text});
         TodoStore.emitChange();
       }
+      break;
+
+    case TodoConstants.TODO_TOGGLE_LOADING:
+      _isLoading = !_isLoading
+      TodoStore.emitChange();
       break;
 
     default:

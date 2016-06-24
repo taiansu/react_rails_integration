@@ -5,6 +5,7 @@ var MainSection = require('./MainSection')
 
 function getTodoState() {
   return {
+    isLoading: TodoStore.isLoading(),
     allTodos: TodoStore.getAll(),
     areAllComplete: TodoStore.areAllComplete()
   }
