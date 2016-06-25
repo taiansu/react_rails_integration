@@ -1,5 +1,6 @@
 import React from 'react'
 var TodoStore = require('../stores/TodoStore')
+var TodoActions = require('../actions/TodoActions')
 var Header = require('./Header')
 var MainSection = require('./MainSection')
 
@@ -17,6 +18,7 @@ const App = React.createClass({
   },
   componentDidMount(){
     TodoStore.addChangeListener(this._onChange)
+    TodoActions.queryTodos()
   },
   componentWillUnmount(){
     TodoStore.removeChangeListener(this._onChange)

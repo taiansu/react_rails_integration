@@ -79,6 +79,12 @@ AppDispatcher.register(function(action){
       TodoStore.emitChange();
       break;
 
+    case TodoConstants.TODO_FETCHED:
+      _todos = action.todos
+      _isLoading = false
+      TodoStore.emitChange();
+      break;
+
     default:
       console.log('can not found actionType: ' + action.actionType)
   }
