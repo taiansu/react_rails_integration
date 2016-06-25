@@ -4,27 +4,57 @@ var TodoConstants = require('../constants/TodoConstants')
 var $ = require('jquery')
 var BASE_URI = 'http://localhost:3000/api/v1'
 
+function todoItem(json){
+  var key = `${json.type}${json.id}`
+
+  var value = {
+    id: json.id,
+    text: json.attributes.text,
+    complete: json.attributes.complete
+  }
+
+  return {[key]: value} // es6: variable as object key
+}
+
 function formatTodosResp(resp) {
   let todos = {}
   if (resp.data.length > 0) {
     resp.data.forEach(todo => {
-      todos[`${todo.type}${todo.id}`] = {
-        id: todo.id,
-        text: todo.attributes.text,
-        complete: todo.attributes.complete
-      }
+      todos = Object.assign(todos, todoItem(todo))
     })
   }
   return todos
 }
 
+function formatTodoRequest(text){
+  return JSON.stringify({
+    "data": {
+      "type": "todos",
+      "attributes": {
+        "text": text,
+        "complete": false
+      }
+    }
+  })
+}
+
 var TodoActions = {
   create(text) {
+    if (!text.trim()) { return }
+
     this.toggleLoading()
 
-    AppDispatcher.dispatch({
-      actionType: TodoConstants.TODO_CREATE,
-      text: text
+    $.ajax({
+      url: `${BASE_URI}/todos`,
+      type: 'POST',
+      contentType: 'application/vnd.api+json',
+      data: formatTodoRequest(text)
+    })
+    .then(resp => {
+      AppDispatcher.dispatch({
+        actionType: TodoConstants.TODO_CREATE,
+        todo: todoItem(resp.data)
+      })
     })
   },
 

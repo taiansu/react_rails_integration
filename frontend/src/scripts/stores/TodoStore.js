@@ -13,14 +13,8 @@ var _isLoading = false
 
 
 // 操作資料本體的函式
-function create (text){
-  var id = _randomId();
-
-  _todos[id] = {
-    id: id,
-    text: text,
-    complete: false
-  }
+function add(todo){
+  _todos = Object.assign(_todos, todo)
 }
 
 function update(id, updates) {
@@ -59,11 +53,9 @@ var TodoStore = Object.assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function(action){
   switch(action.actionType){
     case TodoConstants.TODO_CREATE:
-      var text = action.text.trim();
-      if (text !== '') {
-        create(text);
-        TodoStore.emitChange();
-      }
+      add(action.todo)
+      _isLoading = false
+      TodoStore.emitChange();
       break;
 
     case TodoConstants.TODO_UPDATE_TEXT:
