@@ -5,9 +5,7 @@ var TodoConstants = require('../constants/TodoConstants')
 var CHANGE_EVENT = 'change';
 
 // 資料本體
-var _todos = {
-  "todo1": {id: "todo1", text: 'My todo'},
-};
+var _todos = {};
 
 var _isLoading = false
 
