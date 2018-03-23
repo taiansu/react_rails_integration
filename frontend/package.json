@@ -5,32 +5,31 @@
   "main": "build/bundle.js",
   "dependencies": {
     "flux": "*",
-    "jquery": "^2.2.4",
     "object-assign": "*",
     "react": "*",
     "react-dom": "*",
     "classnames": "*"
   },
   "devDependencies": {
+    "babel-jest": "*",
     "babel-loader": "*",
     "babel-preset-es2015": "*",
     "babel-preset-react": "*",
-    "babel-jest": "*",
-    "node-sass": "*",
-    "sass-loader": "*",
-    "imports-loader": "*",
-    "jquery": "*",
-    "less-loader": "*",
-    "less": "*",
+    "css-loader": "*",
     "exports-loader": "*",
     "extract-text-webpack-plugin": "*",
-    "css-loader": "*",
     "file-loader": "*",
+    "imports-loader": "*",
     "jest-cli": "*",
+    "jquery": "^3.3.1",
+    "less": "*",
+    "less-loader": "*",
+    "node-sass": "*",
+    "sass-loader": "*",
     "style-loader": "*",
     "url-loader": "*",
-    "webpack-dev-server": "*",
-    "webpack": "*"
+    "webpack": "*",
+    "webpack-dev-server": "*"
   },
   "scripts": {
     "build": "webpack --config webpack.prod.config.js"
